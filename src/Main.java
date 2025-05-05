@@ -14,6 +14,7 @@ public class Main {
             System.out.println("3. Exit");
             System.out.println("4. Update Student");
             System.out.println("5. Delete Student");
+            System.out.println("6. Search Student by Name");
             System.out.print("Enter your choice: ");
             // Get user input
             int choice = scanner.nextInt();
@@ -47,7 +48,7 @@ public class Main {
                         System.out.println("No students found.");
                     }
                     else {
-                        System.out.println("All Stusents:");
+                        System.out.println("All Students:");
                         studentList.forEach(System.out::println);
                     }
                     break;
@@ -109,6 +110,11 @@ public class Main {
                     else {
                         System.out.println("Student with ID " + deleteId + " not found.");
                     }
+                    break;
+                case 6:
+                    System.out.print("Enter name to search: ");
+                    String nameToSearch = scanner.nextLine();
+                    StudentService.searchByName(studentList, nameToSearch);
                     break;
 
                 default:
